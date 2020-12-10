@@ -14,7 +14,12 @@ const App = () => {
         <br />
         <br />
         <label for="gender">Gender:</label>
-        <input id="gender" type="text" data-testid="gender" />
+        <input
+          id="gender"
+          type="text"
+          data-testid="gender"
+          defaultValue="male"
+        />
         <br />
         <br />
         <label for="phone">Phone:</label>
