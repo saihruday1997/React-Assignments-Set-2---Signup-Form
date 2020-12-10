@@ -53,7 +53,7 @@ const App = () => {
       return;
     }
 
-    if (!/^\\d+$/.test(phone)) {
+    if (!/^\d+$/.test(phone)) {
       setText("Phone Number must contain only numbers");
       return;
     }
