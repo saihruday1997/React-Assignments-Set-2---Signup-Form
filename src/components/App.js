@@ -63,11 +63,7 @@ const App = () => {
       return;
     }
 
-    let str = name;
-    let splitStr = name.split("@");
-    str = splitStr.length === 2 ? splitStr[0] : null;
-
-    setText(`Hello ${str}`);
+    setText(`Hello ${name.split("@")[0]}`);
   };
 
   return (
