@@ -1,26 +1,26 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "../styles/App.css";
 
 const App = () => {
-  let name = "";
-  let email = "";
-  let gender = "male";
-  let phone = "";
-  let pass = "";
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [gender, setGender] = useState("male");
+  let [phone, setPhone] = useState("");
+  let [pass, setPass] = useState("");
 
   let [text, setText] = useState("");
 
   let handleChange = (type, event) => {
     if (type === "name") {
-      name = event.target.value;
+      setName(event.target.value);
     } else if (type === "email") {
-      email = event.target.value;
+      setEmail(event.target.value);
     } else if (type === "gender") {
-      gender = event.target.value;
+      setGender(event.target.value);
     } else if (type === "phone") {
-      phone = event.target.value;
+      setPhone(event.target.value);
     } else if (type === "pass") {
-      pass = event.target.value;
+      setPass(event.target.value);
     } else {
       return;
     }
@@ -74,6 +74,7 @@ const App = () => {
           id="name"
           type="text"
           data-testid="name"
+          value={name}
           onChange={(event) => handleChange("name", event)}
         />
         <br />
@@ -83,6 +84,7 @@ const App = () => {
           id="email"
           type="email"
           data-testid="email"
+          value={email}
           onChange={(event) => handleChange("email", event)}
         />
         <br />
@@ -92,7 +94,7 @@ const App = () => {
           id="gender"
           type="text"
           data-testid="gender"
-          defaultValue="male"
+          value={gender}
           onChange={(event) => handleChange("gender", event)}
         />
         <br />
@@ -102,6 +104,7 @@ const App = () => {
           id="phone"
           type="number"
           data-testid="phoneNumber"
+          value={phone}
           onChange={(event) => handleChange("phone", event)}
         />
         <br />
@@ -111,6 +114,7 @@ const App = () => {
           id="pass"
           type="password"
           data-testid="password"
+          value={pass}
           onChange={(event) => handleChange("pass", event)}
         />
         <br />
