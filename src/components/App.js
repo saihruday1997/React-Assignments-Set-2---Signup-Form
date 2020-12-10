@@ -4,7 +4,7 @@ import "../styles/App.css";
 const App = () => {
   let name = "";
   let email = "";
-  let gender = "";
+  let gender = "male";
   let phone = "";
   let pass = "";
 
@@ -62,6 +62,12 @@ const App = () => {
       setText("Password must contain atleast 6 letters");
       return;
     }
+
+    let str = name;
+    let splitStr = name.split("@");
+    str = splitStr.length === 2 ? splitStr[0] : null;
+
+    setText(`Hello ${str}`);
   };
 
   return (
