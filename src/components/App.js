@@ -43,7 +43,7 @@ const App = () => {
       return;
     }
 
-    if (!email.contains("@")) {
+    if (!email.includes("@")) {
       setText("Email must contain @");
       return;
     }
