@@ -102,7 +102,7 @@ const App = () => {
         <label htmlFor="phone">Phone: </label>
         <input
           id="phone"
-          type="number"
+          type="text"
           data-testid="phoneNumber"
           value={phone}
           onChange={(event) => handleChange("phone", event)}
