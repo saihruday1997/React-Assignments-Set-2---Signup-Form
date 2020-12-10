@@ -35,6 +35,32 @@ const App = () => {
       pass === ""
     ) {
       setText("All fields are mandatory");
+      return;
+    }
+
+    if (/[^A-Za-z0-9 ]/.test(name)) {
+      setText("Name is not alphanumeric");
+      return;
+    }
+
+    if (!email.contains("@")) {
+      setText("Email must contain @");
+      return;
+    }
+
+    if (gender !== "male" && gender !== "female" && gender !== "other") {
+      setText("Please identify as male, female or others");
+      return;
+    }
+
+    if (!/^\d+$/.test(phone)) {
+      setText("Phone Number must contain only numbers");
+      return;
+    }
+
+    if (pass.length < 6) {
+      setText("Password must contain atleast 6 letters");
+      return;
     }
   };
 
